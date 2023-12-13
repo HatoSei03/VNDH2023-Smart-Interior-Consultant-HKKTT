@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='styles_onboarding.css') }}" />
+
+    <title>Document</title>
+  </head>
+  <div class="container">
+    <div class="header">
+      <img class="logo" src="../static/ikea_logo_small.png" alt="IKEA Logo" />
+      <a href="https://www.ikea.com" class="shopping-link">
+        Shopping
+        <img src="../static/shopping_cart_icon.png" alt="Shopping Cart" />
+      </a>
+    </div>
+    
+    <div class="dream-space">
+      Your dream space is just a few clicks away!
+    </div>
+
+    <div class="content">
+      <div class="content-text">
+        <div class="text-box">
+          <span class="step-text">Step 1: Envision Your Dream Space</span>
+          <ul class="description-text">
+            <li>What type of room is it? (Kitchen, bedroom, etc.)</li>
+            <li>Describe its style (Classic, minimalistic, etc.)</li>
+            <li>Can you specify the furniture you envision?</li>
+          </ul>
+          <span class="step-text">Step 2: Input Your Ideas and Click the Magic Wand</span>
+          <span class="step-text">Step 3: Behold Your Dream Room</span>
+          <ul class="description-text">
+            <li>Explore the dream room visualized with IKEA's help.</li>
+            <li>Turn your vision into reality by clicking the shopping button to purchase the featured furniture.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="input-field">
+      <div class="input-container">
+        <div class="input-wrapper">
+          <form action="/onboarding" method="POST">
+            <input type="text" name = "prompt" class="input-text" placeholder="Input your dream room here..." />
+          </form>
+        </div>
+      </div>
+      <div class="button-container">
+        <div class="button-wrapper" id = "magic-button">
+          <img class="button-icon" src="../static/magic.png" alt="Magic Wand" />
+        </div>
+      </div>
+    </div>
+    <form action="/result" method="POST">
+      <script>
+        const button = document.querySelector('.button-container');
+        const form = document.querySelector('form');
+      
+        button.addEventListener('click', function() {
+          form.submit();
+        });
+      </script>
+    </form>
+</body>
+
+</html>
