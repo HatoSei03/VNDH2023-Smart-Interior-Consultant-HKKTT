@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles_index.css')}}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles_index.css') }}"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="../static/styles_index.css" /> -->
   </head>
   <body>
     <div class="container">
@@ -33,11 +38,10 @@
         <div class="intro">
           A world of inspiration for your home – Let's create together!
         </div>
-        <!-- <a href="onboarding.html" class="cta-button"
-          >Create Your Dream Home</a
-        > -->
-        <form action="/onboarding" method="POST"> 
-          <button type="submit">Create Your Dream Home</button>
+        <form action="/onboarding" method="POST">
+          <button type="submit" class="cta-button">
+            Create Your Dream Home
+          </button>
         </form>
       </div>
       <div class="yellow-bar"></div>
