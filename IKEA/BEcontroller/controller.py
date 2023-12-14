@@ -10,13 +10,9 @@ def IKEA():
 
 @app.route('/onboarding', methods = ["POST"])
 def onboarding():
-    # data = request.form.get("prompt")
-    # print(data)
-    # if data!=None:
-    #     redirect('/result')
     return render_template("onboarding.html")
 
-@app.route('/result', methods = ["POST"])
+@app.route('/result', methods = ["POST", "GET"])
 def result():
     data = request.form.get("prompt")
     print(data)
