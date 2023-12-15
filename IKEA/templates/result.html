@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='styles_result.css') }}"/>
-    <!-- <link rel="stylesheet" type="text/css"  href="../static/styles_result.css" /> -->
 
     <title>Document</title>
   </head>
@@ -17,14 +16,15 @@
       </a>
     </div>
       
-      <img class="result-img">
+      <img class="result-img"  scr="../static/result_img.png">
 
       <div class="input-field">
         <div class="input-container">
           <div class="input-wrapper">
-            <button class="edit-button" onclick="window.location.href='../onboarding/index.html'">
-              <img src="../static/edit-icon.png" alt="Pen" />
-            </button>
+            <form action="/onboarding" method="POST">
+            
+              <button class="edit-button" type="submit"><img src="../static/edit-icon.png" alt="Pen" /></button>  
+            </form>
             <div class="text-box">
               a spacious wardrobe, elegant bed frames and chests of drawers. 
 There are even storage boxes that fit under the bed – less floor to vacuum and more room to store things!

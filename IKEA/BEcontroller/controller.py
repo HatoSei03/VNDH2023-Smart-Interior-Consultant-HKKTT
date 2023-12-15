@@ -1,6 +1,6 @@
 from lib import app
 from BEmodel.model import model
-from flask import request, render_template
+from flask import redirect, request, render_template
 
 obj = model()
 
@@ -10,13 +10,12 @@ def IKEA():
 
 @app.route('/onboarding', methods = ["POST"])
 def onboarding():
-    data = request.form.get("prompt")
-    # print(data)
-    # obj.AddPrompt(request.form)
     return render_template("onboarding.html")
 
-@app.route('/result', methods = ["POST"])
+@app.route('/result', methods = ["POST", "GET"])
 def result():
+    data = request.form.get("prompt")
+    print(data)
     return render_template("result.html")
 
      
