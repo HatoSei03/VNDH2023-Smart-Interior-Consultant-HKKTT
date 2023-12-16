@@ -12,7 +12,7 @@ class model():
 	        host="localhost",
             port="3306",
 	        user = "root",
-        	password="Hieu0504@",
+        	password="@K2942004",
 	        database="IKEA")
             self.cursor = self.connector.cursor(dictionary=True)
             self.connector.autocommit = True

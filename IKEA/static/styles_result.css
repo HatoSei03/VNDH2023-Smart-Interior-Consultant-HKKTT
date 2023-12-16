@@ -242,7 +242,7 @@ body {
   display: inline-block;
   width: 200px;
   height: 220px;
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
   text-decoration: none;
   color: black;
   text-align: center;

@@ -1,12 +1,12 @@
 const productList = [
   {
     link: "www.ikea.com",
-    image: "magic.png",
+    image: "https://picsum.photos/200",
     price: "$19.99",
   },
   {
     link: "www.ikea.com",
-    image: "magic.png",
+    image: "https://picsum.photos/200",
     price: "$24.99",
   },
   {

@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='styles_result.css') }}"/>
+    <!-- <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='styles_result.css') }}"/> -->
+    <link rel="stylesheet" type="text/css"  href="../static/styles_result.css"/>
+
 
     <title>Document</title>
   </head>
@@ -16,14 +18,13 @@
       </a>
     </div>
       
-      <img class="result-img"  scr="../static/result_img.png">
-      <div class="product-list" id="productList"> </div>
+    <img class="result-img" id="resultImg" src="../static/result_img.png">
+    <div class="product-list" id="productList"> </div>
 
-      <div class="input-field">
+      <div class="input-button-container">
         <div class="input-container">
           <div class="input-wrapper">
             <form action="/onboarding" method="POST">
-            
               <button class="edit-button" type="submit"><img src="../static/edit-icon.png" alt="Pen" /></button>  
             </form>
             <div class="text-box">{{prompt_data}}</div>
@@ -36,7 +37,14 @@
         </div>
       </div>
     </div>
-      
+    <!-- <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        const resultImg = document.getElementById('resultImg');
+        const inputContainer = document.querySelector('.input-container');
+            const resultImgWidth = resultImg.offsetWidth;
+        inputContainer.style.width = resultImgWidth + 'px';
+      });
+    </script> -->
     <script>
       const button = document.querySelector('.button-container');
     
