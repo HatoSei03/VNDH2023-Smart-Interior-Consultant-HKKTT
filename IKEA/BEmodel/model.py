@@ -24,9 +24,10 @@ class model():
         self.cursor.execute(f"Insert into UserPrompt(prompt) values ('{data}')")
         return make_response({"message":"Insert successfully"}, 201)
     
-    # def GetPrompt(self):
-    #     result = self.cur.execute(f"SELECT * FROM UserPrompt")
-    #     if len(result) > 0:
-    #         return {"payload": result}
-    #     else:
-    #         return make_response({"message":"Not found data"}, 204)
+    # API to get prompts data from database
+    def GetPrompt(self):
+        result = self.cur.execute(f"SELECT * FROM UserPrompt")
+        if len(result) > 0:
+            return {"payload": result}
+        else:
+            return make_response({"message":"Not found data"}, 204)

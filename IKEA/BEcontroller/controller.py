@@ -18,13 +18,12 @@ def onboarding():
 
 @app.route('/result', methods = ["POST", "GET"])
 def result():
+    data = request.form.get('prompt')
     if request.method == 'POST':
-        data = request.form.get('prompt')
         translate = translator.translate(data, dest = "en")
         new_data = translate.text
-        print(new_data)
         obj.AddPrompt(new_data)
-    return render_template("result.html")
+    return render_template("result.html", prompt_data = data)
 
      
 # @app.route('/getPrompt', methods = ["GET"])
