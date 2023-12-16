@@ -186,10 +186,10 @@ body {
 }
 
 .result-img {
-  width: 816px;
-  height: 454px;
+  width: 512px;
+  height: 512px;
   position: relative;
-  background-color: #0844ab;
+  /* background-color: #0844ab; */
   margin: 70px auto;
 }
 
