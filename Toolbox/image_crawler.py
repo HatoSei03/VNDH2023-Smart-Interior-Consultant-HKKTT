@@ -2,7 +2,7 @@ import requests
 import re
 
 def download_image(image_url):
-    local_filename = "../img/" + image_url.replace('https://www.ikea.com/sa/en/images/products/', '')
+    local_filename = "../new_img/" + image_url.replace('https://www.ikea.com/sa/en/images/products/', '')
     response = requests.get(image_url, stream=True)
     if response.status_code == 200:
         with open(local_filename, 'wb') as file:
@@ -32,4 +32,4 @@ for lines in open('data.csv', 'r').readlines():
     cnt += 1
     print(cnt)
     line = lines.split(',')
-    get_image_link(line[7])
+    get_image_link(line[4])
