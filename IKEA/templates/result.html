@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='styles_result.css') }}"/> -->
-    <link rel="stylesheet" type="text/css"  href="../static/styles_result.css"/>
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='styles_result.css') }}"/>
+    <!-- <link rel="stylesheet" type="text/css"  href="../static/styles_result.css"/> -->
 
 
     <title>Document</title>
@@ -17,9 +17,9 @@
         <img src="../static/shopping_cart_icon.png" alt="Shopping Cart" />
       </a>
     </div>
-      
-    <img class="result-img" id="resultImg" src="../static/result_img.png">
-    <div class="product-list" id="productList"> </div>
+
+      <img class="result-img"  scr="{{ url_for('static', filename='generated_img.jpg') }}">
+      <div class="product-list" id="productList"> </div>
 
       <div class="input-button-container">
         <div class="input-container">
