@@ -186,20 +186,11 @@ body {
 }
 
 .result-img {
-<<<<<<< HEAD
   width: 512px;
   height: 512px;
   position: relative;
   /* background-color: #0844ab; */
   margin: 70px auto;
-=======
-  width: 816px;
-  height: 454px;
-  position: absolute;
-  background-color: #0844ab;
-  margin-left: 220px;
-  margin-top: 75px;
->>>>>>> ebd99cec5ffdd1c91ab41f068a5b4b6d9805d6e9
 }
 
 .text-box {
