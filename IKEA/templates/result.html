@@ -17,8 +17,8 @@
         <img src="../static/shopping_cart_icon.png" alt="Shopping Cart" />
       </a>
     </div>
-
-      <img class="result-img"  scr="{{ url_for('static', filename='generated_img.jpg') }}">
+      
+      <img class="result-img"  src="{{ url_for('static', filename='generated_img.jpg') }}">
       <div class="product-list" id="productList"> </div>
 
       <div class="input-button-container">
@@ -52,7 +52,40 @@
         window.location.href = 'http://www.google.com/';
       });
     </script>
-        <script src="../static/script.js"></script>
+        <script>
+
+        const productListContainer = document.getElementById("productList");
+
+        // Fetch the product data from the local server
+        fetch("../static/products.json")
+          .then((response) => response.json())
+          .then((data) => {
+            // Iterate over the product data and create product cards
+            data.forEach((product) => {
+              const productCard = document.createElement("a");
+              productCard.href = product.link;
+              productCard.classList.add("product-card");
+
+              const productImage = document.createElement("img");
+              productImage.src = product.image;
+              productImage.alt = "Product Image";
+              productImage.classList.add("product-image");
+
+              const productPrice = document.createElement("p");
+              productPrice.textContent = product.price;
+              productPrice.classList.add("product-price");
+
+              productCard.appendChild(productImage);
+              productCard.appendChild(productPrice);
+              productListContainer.appendChild(productCard);
+            });
+          })
+          .catch((error) => {
+            console.error("Error fetching product data:", error);
+          });
+
+
+        </script>
 
 </body>
 

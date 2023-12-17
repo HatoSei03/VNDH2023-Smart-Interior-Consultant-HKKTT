@@ -18,15 +18,11 @@ These instructions will get a copy of the project up and running on your local m
 
 ### Prerequisites
 
-List any dependencies needed to install the software, like libraries, frameworks, or any other software.
-
-
-For example:
-```bash
-- Python 3.8+
-- TensorFlow 2.x
-- PIL (Python Imaging Library)
-```
+- Language: `python`
+- API Platform: `HuggingFace`
+- Foundation model: `Stable Diffusion XL base 1.0`, `YOLO v8`
+- Database: `MySQL`
+- External libraries: `PyTorch`, `PIL`,...
 
 ### Installation
 
@@ -51,6 +47,21 @@ text = "A scenic view of mountains during sunset."
 image = generator.generate(text)
 image.save("output.jpg")
 ```
+
+
+## Data Flow
+
+![](Readme_img\data_clean.png)
+
+## AI Model
+### Text-To-Image
+- Foundation model: `Stable Diffusion XL base 1.0`
+- Training dataset customized fit to IKEA furniture items
+- Generate recommend desgin picture based on user's prompt
+
+### Object Detection & Classification
+- Foundation model: `YOLO v8`
+- Used to list IKEA furnitutre items matched with the recommeded desgin
 
 ## Running the tests
 

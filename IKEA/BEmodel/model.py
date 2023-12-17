@@ -33,19 +33,11 @@ class model():
             return make_response({"message":"Not found data"}, 204)
     
     def GetLink(self, data):
-        result = self.cursor.execute(f"select * from UserPrompt;")
-        # return {"payload": f'{result}'}
+        conditions = [f"itemLink LIKE '%{part}%'" for part in data]
+        condition_str = " AND ".join(conditions)
+        query = f"SELECT * FROM IkeaItem WHERE {condition_str};"
+        self.cursor.execute(query)
         result = self.cursor.fetchall()
-        prompts = [item["prompt"] for item in result]
-
-        print(prompts)
-        # print(result)
-        # if len(data) == 2:
-        #     result = self.cur.execute(f"")
-        # elif len(data) == 3:
-        #     result = self.cur.execute(f"")
-        
-        # if len(result) > 0:
-        #     return result
-        # else:
-        #     return make_response({"message":"Not found data"}, 204)
+        url = [item["itemLink"] for item in result]
+        price = [item["itemPrice"] for item in result]
+        return url, price
