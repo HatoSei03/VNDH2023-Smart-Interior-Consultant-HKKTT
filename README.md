@@ -1,57 +1,48 @@
-# Text-to-Image Generation MVP
+# [VNDH2023 - HKKTT] Smart Interior Consultant
 
-## Overview
+## Problem Overview
 
-Briefly explain what the project does and what the MVP is capable of. Include the purpose of the project and who it is for.
+This solution provides users a tool ehancing their shopping experience in the IKEA environment
+
+- Generate interior design based on user's style
+- Recommend some IKEA items matched with their need
 
 ## Features
 
-List the key features of the MVP, such as:
-- Text input handling
-- Image generation algorithms used
-- Output formats supported
-- Any limitations or known issues
+- Generate design based on user's prompt
+- List related IKEA items
 
-## Getting Started
-
-These instructions will get a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
+## Techniques Overview
 - Language: `python`
 - API Platform: `HuggingFace`
 - Foundation model: `Stable Diffusion XL base 1.0`, `YOLO v8`
 - Database: `MySQL`
 - External libraries: `PyTorch`, `PIL`,...
 
-### Installation
-
-Provide a step-by-step series of examples that tell you how to get a development environment running.
-
-For example:
-```bash
-git clone https://github.com/yourusername/text-to-image-mvp.git
-cd text-to-image-mvp
-pip install -r requirements.txt
-```
-
-## Usage
-
-Provide examples of how to use the MVP. Include code blocks and explanations. For example:
-
-```python
-from text_to_image_generator import TextToImageGenerator
-generator = TextToImageGenerator()
-
-text = "A scenic view of mountains during sunset."
-image = generator.generate(text)
-image.save("output.jpg")
-```
-
-
 ## Data Flow
+Step-by-step processing
 
-![](Readme_img\data_clean.png)
+- Cleaning Data
+- Collecting images
+
+### Cleaning data
+- Remove records not having enough 3 size
+- Remove records having "no-meaning" URL
+- Reindex
+
+### Collecting images
+- Collect useful IKEA items' images from their URL
+- These images used for training text-to-image model
+
+### Labeling images
+- Label some attributes: category, color
+- These labels used for object detection and classification
+
+### Final datasets
+
+After the previous steps, we have 2 datasets:
+- full cleaned dataset
+- image dataset: images used for model training
 
 ## AI Model
 ### Text-To-Image
@@ -79,34 +70,17 @@ List the major frameworks/libraries used to bootstrap the project. For example:
 - [TensorFlow](https://www.tensorflow.org/) - ML framework
 - [Pillow](https://pillow.readthedocs.io/en/stable/) - Image processing library
 
-## Contributing
-
-Instructions for how to contribute to the project.
-
-## Versioning
-
-Explain the versioning system used, if any.
-
 ## Authors
 
-List the lead developers and any contributors.
+This solution is in the scope of VNDH 2023 Competition
+
+Author group:
+- Le Ngoc Thao (leader)
+- Tran Trung Hieu
+- Vo Cao Tri
+- Vo Minh Khoi
+- Van Tuan Kiet
 
 ## License
 
 State the license the project is under.
-
-## Acknowledgments
-
-Hat tips to anyone whose code was used, inspirations, and any other acknowledgments.
-
-## Contact Information
-
-How to reach the project maintainers.
-
-## Frequently Asked Questions
-
-Optional section to address common inquiries.
-
-## Screenshots
-
-Include images of the project in action, if possible.
