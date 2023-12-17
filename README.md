@@ -54,14 +54,6 @@ After the previous steps, we have 2 datasets:
 - Foundation model: `YOLO v8`
 - Used to list IKEA furnitutre items matched with the recommeded desgin
 
-## Running the tests
-
-Explain how to run the automated tests for this system, if applicable.
-
-## Deployment
-
-Notes about how to deploy this on a live system, if relevant.
-
 ## Built With
 
 List the major frameworks/libraries used to bootstrap the project. For example:
@@ -80,7 +72,3 @@ Author group:
 - Vo Cao Tri
 - Vo Minh Khoi
 - Van Tuan Kiet
-
-## License
-
-State the license the project is under.
