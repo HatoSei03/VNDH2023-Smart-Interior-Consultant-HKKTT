@@ -22,12 +22,6 @@ with open('IKEA.csv', 'r') as f:
         itemLink = row[0]
         price = row[1]
 
-        # if price == '0' :
-        #     query = f'INSERT INTO IkeaItem (itemID, itemName, category, itemLink, price) VALUES ("{itemID}", "{itemName}", "{category}", "{itemLink}", 0)'
-        # else :
-        #     price = price[2:]
-        #     price_float = float(price)
-        #     query = f'INSERT INTO IkeaItem (itemID, itemName, category, itemLink, price) VALUES ("{itemID}", "{itemName}", "{category}", "{itemLink}", {price_float})'
 
         if price == 0:
             # Tạo lệnh INSERT
