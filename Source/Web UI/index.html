@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="dialog-overlay" id="dialogOverlay">
+        <div class="dialog-box">
+          <div class="dialog-message">
+            I am aware of the
+            <a href="https://google.com" style="color: black">Privacy Policy</a>
+            and understand that my prompt is stored to provide me with the best
+            possible support.
+          </div>
+          <button class="dialog-button" id="confirmButton">
+            Confirm my choice
+          </button>
+        </div>
+      </div>
+      <div class="copyright">© Inter IKEA Systems B.V. 1999 - 2023</div>
+      <div class="header">
+        <img class="logo" src="assets/ikea_logo_small.png" alt="IKEA Logo" />
+        <a href="https://www.ikea.com" class="shopping-link">
+          Shopping
+          <img src="assets/shopping_cart_icon.png" alt="Shopping Cart" />
+        </a>
+      </div>
+      <div class="content">
+        <div class="intro">
+          A world of inspiration for your home – Let's create together!
+        </div>
+        <a href="onboarding/index.html" class="cta-button">Create Your Dream Home</a>
+      </div>
+      <div class="yellow-bar"></div>
+      <img class="image" src="assets/ikea_poll.png" alt="IKEA Poll" />
+      <div class="map-container">
+        <img class="map" src="assets/ikea_map.png" alt="IKEA Map" />
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color" style="background: #006aa6"></div>
+            <div class="legend-text">Current market locations</div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background: #eecd32"></div>
+            <div class="legend-text">Future market locations</div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background: #c50c1e"></div>
+            <div class="legend-text">Former market locations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var dialogOverlay = document.getElementById("dialogOverlay");
+        var confirmButton = document.getElementById("confirmButton");
+
+        confirmButton.addEventListener("click", function () {
+          dialogOverlay.style.display = "none";
+        });
+
+        dialogOverlay.style.display = "flex";
+      });
+    </script>
+  </body>
+</html>
